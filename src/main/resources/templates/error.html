@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<head th:replace="layout :: head('Error')"></head>
+<body>
+<header th:replace="layout :: header"></header>
+
+<style>
+          .app-error {
+
+            background: coral;
+            padding: 10px 30px 10px 30px;
+            margin: 100px 100px 100px 100px;
+           }
+           h2 {
+            margin-bottom: 10px;
+           }
+
+    </style>
+
+
+<div class="app-error">
+    <h2>Error!</h2>
+    <block th:if="${ex!= null}">
+         <strong th:if="${ex.message}!=null" th:text="${ex.message}"></strong>
+    </block>
+</div>
+
+<div th:replace="layout :: scripts"></div>
+</body>
+</html>
